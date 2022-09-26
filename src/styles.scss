@@ -1,0 +1,65 @@
+$maincolor: orange;
+$contrastcolor: red;
+
+@mixin red-text-orange-bg {
+  color: $contrastcolor;
+  background-color: $maincolor;
+}
+
+@mixin red-text-orange-bg {
+  color: $maincolor;
+  background-color: $contrastcolor;
+}
+
+.App {
+    background-image: url(https://i.imgur.com/TREmI1Sh.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+nav {
+  @include red-text-orange-bg;
+  display: flex;
+  justify-content: flex-start;
+
+  a {
+    @include red-text-orange-bg;
+
+    div {
+      margin: 10px;
+      font-size: 40px;
+    }
+  }
+}
+
+
+section,
+div {
+  form {
+    input {
+      @include red-text-orange-bg;
+      padding: 10px;
+      font-size: 1.3em;
+      margin: 10px;
+
+      &[type="submit"]:hover {
+        @include red-text-orange-bg;
+      }
+    }
+  }
+}
+
+
+button#delete {
+  @include red-text-orange-bg;
+  display: block;
+  margin: auto;
+  font-size: 1.3em;
+  padding: 10px;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
